@@ -1,0 +1,195 @@
+/* Navbar.css */
+
+.navbar {
+  height: 8vh;
+  width: 100%;
+  padding: 2% 0%;
+  margin: 0;
+  border: 0;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  opacity: 0;
+  animation: fadeIn 1s ease-in-out forwards;
+  transition: transform 0.5s ease;
+  font-family: 'Courier New', monospace;
+}
+
+.navbar.hidden {
+  transform: translateY(-100%);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.logo {
+  width: 15%;
+  height: 100%;
+  padding: 1rem;
+  font-size: larger;
+  align-items: center;
+  font-weight: bolder;
+  display: flex;
+  transition: all 0.3s ease;
+  animation: slideFromTop 1s ease-in-out forwards;
+  position: relative; /* Ensure relative positioning for cursor */
+}
+
+@keyframes slideFromTop {
+  from {
+    transform: translateY(-50px);
+  }
+
+  to {
+    transform: translateY(0);
+  }
+}
+
+.logo-text {
+  position: relative; /* Required for cursor animation */
+  overflow: hidden; /* Ensure text doesn't overflow its container */
+  white-space: nowrap; /* Prevent wrapping */
+  font-size: 1.5rem; /* Adjust font size as needed */
+  color: #333; /* Adjust text color as needed */
+  width: 0; /* Start with no width */
+  animation: typeAnimation 1.5s steps(20, end) forwards; /* Adjust duration and steps as needed */
+  padding-left: 30%;
+  padding-top: 20%;
+}
+
+@keyframes typeAnimation {
+  to {
+    width: 100%; /* Expand to full width */
+  }
+}
+
+.logo-text::after {
+  content: '|'; /* Cursor character */
+  position: absolute;
+  right: -8px; /* Adjust position of cursor */
+  animation: blinkCursor 1s infinite step-end; /* Blinking cursor animation */
+  color: #000; /* Change cursor color to black */
+}
+
+@keyframes blinkCursor {
+  from, to {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.menu {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding-right: 4%;
+  transition: all 0.3s ease;
+  padding-top: 3%;
+}
+
+.menu-list {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  font-size: larger;
+  font-weight: bolder;
+}
+
+.menu-item {
+  position: relative;
+  padding: 0.5rem 1rem;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  opacity: 0;
+  animation: 0.5s ease-in-out forwards;
+  transition: transform 0.5s ease, opacity 0.5s ease;
+
+}
+
+.menu-item.hidden {
+  transform: translateY(-50px);
+  opacity: 0;
+}
+
+@keyframes slideInFromTop {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  from {
+    opacity: 0;
+    transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-item:nth-child(1) {
+  animation-name: slideInFromTop;
+  animation-delay: 0.2s;
+}
+
+.menu-item:nth-child(2) {
+  animation-name: slideInFromBottom;
+  animation-delay: 0.4s;
+}
+
+.menu-item:nth-child(3) {
+  animation-name: slideInFromTop;
+  animation-delay: 0.6s;
+}
+
+.menu-item:nth-child(4) {
+  animation-name: slideInFromBottom;
+  animation-delay: 0.8s;
+}
+
+.menu-item::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -10%;
+  width: 8px;
+  height: 8px;
+  background-color: transparent;
+  border-radius: 50%;
+  transition: background-color 0.3s ease;
+}
+
+.menu-item:hover::after {
+  background-color: rgb(69, 69, 69);
+}
+
+.menu-item:hover {
+  color: rgb(69, 69, 69);
+}
