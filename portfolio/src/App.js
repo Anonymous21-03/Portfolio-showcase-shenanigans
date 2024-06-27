@@ -6,6 +6,7 @@ import About from './Pages/About';
 import Timeline from './Pages/Timeline';
 import Technologies from './Pages/Technologies';
 import Certificates from './Pages/Certificates';
+import Music from './Pages/Music';
 
 function App() {
   useEffect(() => {
@@ -23,6 +24,7 @@ function App() {
       <Timeline/> 
       <Technologies/>
       <Certificates/>
+      <Music/>
     </div>
   );
 }

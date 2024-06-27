@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import './About.css'
-import doodleImage from './doodle.jpeg'
+import doodleImage from './my_images/random(1).jpg'
 
 const About = () => {
   const [isVisible, setIsVisible] = useState(false);
