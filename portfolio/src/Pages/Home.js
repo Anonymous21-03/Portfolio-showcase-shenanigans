@@ -6,27 +6,27 @@ const CARD_COUNT = 5
 const MAX_RADIUS = 200
 
 const cardData = [
-  { text: 'React', color: '#61DAFB', contrastColor: '#002b55' },
-  { text: 'JavaScript', color: '#F7DF1E', contrastColor: '#333300' },
-  { text: 'CSS', color: '#264DE4', contrastColor: '#FFFFFF' },
-  { text: 'HTML', color: '#E34F26', contrastColor: '#FFFFFF' },
-  { text: 'Node.js', color: '#339933', contrastColor: '#FFFFFF' },
-  { text: 'Express', color: '#000000', contrastColor: '#FFFFFF' },
-  { text: 'MongoDB', color: '#47A248', contrastColor: '#FFFFFF' },
-  { text: 'Redux', color: '#764ABC', contrastColor: '#FFFFFF' },
-  { text: 'Vue', color: '#4FC08D', contrastColor: '#003300' },
-  { text: 'Angular', color: '#DD0031', contrastColor: '#FFFFFF' },
-  { text: 'Python', color: '#3776AB', contrastColor: '#FFFFFF' },
-  { text: 'Ruby', color: '#CC342D', contrastColor: '#FFFFFF' },
-  { text: 'PHP', color: '#787CB5', contrastColor: '#FFFFFF' },
-  { text: 'Java', color: '#007396', contrastColor: '#FFFFFF' },
-  { text: 'C#', color: '#239120', contrastColor: '#FFFFFF' },
-  { text: 'C++', color: '#00599C', contrastColor: '#FFFFFF' },
-  { text: 'Swift', color: '#FA7343', contrastColor: '#FFFFFF' },
-  { text: 'Kotlin', color: '#0095D5', contrastColor: '#FFFFFF' },
-  { text: 'TypeScript', color: '#3178C6', contrastColor: '#FFFFFF' },
-  { text: 'Go', color: '#00ADD8', contrastColor: '#FFFFFF' }
-]
+  { text: 'React', color: '#61DAFB', contrastColor: '#E6F7FE' },
+  { text: 'JavaScript', color: '#F7DF1E', contrastColor: '#FFFDE6' },
+  { text: 'CSS', color: '#264DE4', contrastColor: '#E6E9FC' },
+  { text: 'HTML', color: '#E34F26', contrastColor: '#FCE9E6' },
+  { text: 'Node.js', color: '#339933', contrastColor: '#E8F5E8' },
+  { text: 'Express', color: '#000000', contrastColor: '#F2F2F2' },
+  { text: 'MongoDB', color: '#47A248', contrastColor: '#EAF5EA' },
+  { text: 'Redux', color: '#764ABC', contrastColor: '#F0E9FA' },
+  { text: 'Vue', color: '#4FC08D', contrastColor: '#EAF8F3' },
+  { text: 'Angular', color: '#DD0031', contrastColor: '#FBE6EA' },
+  { text: 'Python', color: '#3776AB', contrastColor: '#E8F0F8' },
+  { text: 'Ruby', color: '#CC342D', contrastColor: '#FAE8E7' },
+  { text: 'PHP', color: '#787CB5', contrastColor: '#F0F1F8' },
+  { text: 'Java', color: '#007396', contrastColor: '#E6F0F3' },
+  { text: 'C#', color: '#239120', contrastColor: '#E7F4E6' },
+  { text: 'C++', color: '#00599C', contrastColor: '#E6EEF5' },
+  { text: 'Swift', color: '#FA7343', contrastColor: '#FEF0EA' },
+  { text: 'Kotlin', color: '#0095D5', contrastColor: '#E6F4FA' },
+  { text: 'TypeScript', color: '#3178C6', contrastColor: '#E7F0F9' },
+  { text: 'Go', color: '#00ADD8', contrastColor: '#E6F6FB' }
+];
 
 const generateRandomPosition = () => ({
   x: Math.random() * (40) - 40,

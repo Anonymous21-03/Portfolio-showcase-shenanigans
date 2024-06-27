@@ -1,7 +1,10 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 import './About.css'
+import doodleImage from './doodle.jpeg'
 
 const About = () => {
+  const [isVisible, setIsVisible] = useState(false);
+
   useEffect(() => {
     const createStars = () => {
       const stars = document.querySelector('.stars')
@@ -22,20 +25,36 @@ const About = () => {
     }
 
     createStars()
+
+    const handleScroll = () => {
+      const scrollPosition = window.scrollY;
+      const aboutSection = document.querySelector('.about-container');
+      const aboutSectionPosition = aboutSection.offsetTop;
+
+      if (scrollPosition > aboutSectionPosition - window.innerHeight / 2) {
+        setIsVisible(true);
+      }
+    }
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
   }, [])
 
   return (
     <div className='about-container'>
       <div className='photo-section'>
         <div className='stars'></div>
-        <img src='./doodle.jpeg'/>
+        <div className={`image-container ${isVisible ? 'visible' : ''}`}>
+          <img src={doodleImage} alt="Doodle" className='profile-image' />
+          <div className='name'>Rahul Pardasani</div>
+        </div>
       </div>
       <div className='text-section'>
-        <div className='greeting'>
-          SuSwagatam
+        <div className={`greeting ${isVisible ? 'visible' : ''}`}>
+          Su Swagatam
           <hr />
         </div>
-        <div className='text'>
+        <div className={`text ${isVisible ? 'visible' : ''}`}>
           As a passionate college student, I'm developing a versatile skill set
           in data science and web development. I'm honing my abilities in
           Python, Pandas, and machine learning, while also crafting interactive
