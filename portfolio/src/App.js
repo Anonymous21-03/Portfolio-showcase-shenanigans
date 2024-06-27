@@ -5,6 +5,7 @@ import { handleScroll } from './Components/ScrollAnimations';
 import About from './Pages/About';
 import Timeline from './Pages/Timeline';
 import Technologies from './Pages/Technologies';
+import Certificates from './Pages/Certificates';
 
 function App() {
   useEffect(() => {
@@ -21,6 +22,7 @@ function App() {
       <About/>
       <Timeline/> 
       <Technologies/>
+      <Certificates/>
     </div>
   );
 }
