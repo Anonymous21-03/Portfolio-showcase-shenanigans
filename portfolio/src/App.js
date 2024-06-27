@@ -3,6 +3,7 @@ import Navbar from './Components/Navbar';
 import Home from './Pages/Home';
 import { handleScroll } from './Components/ScrollAnimations';
 import About from './Pages/About';
+import Timeline from './Pages/Timeline';
 
 function App() {
   useEffect(() => {
@@ -17,6 +18,7 @@ function App() {
       <Navbar />
       <Home />
       <About/>
+      <Timeline/> 
     </div>
   );
 }
