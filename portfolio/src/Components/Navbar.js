@@ -12,7 +12,7 @@ const Navbar = () => {
     <div className='navbar'>
       <div className='logo'>
         <div className='png'></div>
-        <div className='logo-text'>RAHUL.DEV</div>
+        <div className='logo-text'>RAHUL.IO</div>
       </div>
       <div className={`menu ${isMenuOpen ? 'open' : ''}`}>
         <ul className='menu-list'>
