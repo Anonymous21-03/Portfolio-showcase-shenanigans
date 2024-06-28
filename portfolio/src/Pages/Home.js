@@ -260,7 +260,12 @@ const Home = () => {
         <span>the</span>
         <span>Creativity</span>
       </div>
-      <div className='cards-container'>{cardElements}</div>
+      <div className='cards-container'>
+        {cardElements}
+        <div className='card-instruction'>
+          Psst! These cards aren't just eye candy. Give 'em a swipe and watch the magic unfold!
+        </div>
+      </div>
     </div>
   )
 }

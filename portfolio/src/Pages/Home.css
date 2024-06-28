@@ -174,7 +174,7 @@
 
 .card-instruction {
     position: absolute;
-    bottom: -40px;
+    bottom: -30%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
