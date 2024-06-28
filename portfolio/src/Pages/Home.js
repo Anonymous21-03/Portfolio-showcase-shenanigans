@@ -255,15 +255,17 @@ const Home = () => {
 
   return (
     <div className='home-container' style={{ backgroundColor }}>
-      <div className='intro'>
-        <span>Unleashing</span>
-        <span>the</span>
-        <span>Creativity</span>
-      </div>
-      <div className='cards-container'>
-        {cardElements}
-        <div className='card-instruction'>
-          Psst! These cards aren't just eye candy. Give 'em a swipe and watch the magic unfold!
+      <div className='content-wrapper'>
+        <div className='intro'>
+          <span>Unleashing</span>
+          <span>the</span>
+          <span>Creativity</span>
+        </div>
+        <div className='cards-container'>
+          {cardElements}
+          <div className='card-instruction'>
+            Psst! These cards aren't just eye candy. Give 'em a swipe and watch the magic unfold!
+          </div>
         </div>
       </div>
     </div>

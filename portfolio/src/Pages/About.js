@@ -37,6 +37,7 @@ const About = () => {
     }
 
     window.addEventListener('scroll', handleScroll);
+    handleScroll(); // Check visibility on initial load
     return () => window.removeEventListener('scroll', handleScroll);
   }, [])
 
