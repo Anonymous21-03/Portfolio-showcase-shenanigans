@@ -7,6 +7,9 @@ import Timeline from './Pages/Timeline';
 import Technologies from './Pages/Technologies';
 import Certificates from './Pages/Certificates';
 import Music from './Pages/Music';
+import Contact from './Pages/Contact';
+import '@fortawesome/fontawesome-free/css/all.min.css';
+
 
 function App() {
   useEffect(() => {
@@ -24,7 +27,8 @@ function App() {
       <Timeline/> 
       <Technologies/>
       <Certificates/>
-      <Music/>
+      {/* <Music/> */}
+      <Contact/>
     </div>
   );
 }
