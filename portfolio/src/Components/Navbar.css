@@ -45,7 +45,7 @@
   display: flex;
   transition: all 0.3s ease;
   animation: slideFromTop 1s ease-in-out forwards;
-  position: relative; /* Ensure relative positioning for cursor */
+  position: relative;
 }
 
 @keyframes slideFromTop {
@@ -59,29 +59,29 @@
 }
 
 .logo-text {
-  position: relative; /* Required for cursor animation */
-  overflow: hidden; /* Ensure text doesn't overflow its container */
-  white-space: nowrap; /* Prevent wrapping */
-  font-size: 1.5rem; /* Adjust font size as needed */
-  color: #333; /* Adjust text color as needed */
-  width: 0; /* Start with no width */
-  animation: typeAnimation 1.5s steps(20, end) forwards; /* Adjust duration and steps as needed */
+  position: relative;
+  overflow: hidden;
+  white-space: nowrap;
+  font-size: 1.5rem;
+  color: #333;
+  width: 0;
+  animation: typeAnimation 1.5s steps(20, end) forwards;
   padding-left: 30%;
   padding-top: 20%;
 }
 
 @keyframes typeAnimation {
   to {
-    width: 100%; /* Expand to full width */
+    width: 100%;
   }
 }
 
 .logo-text::after {
-  content: '|'; /* Cursor character */
+  content: '|';
   position: absolute;
-  right: -8px; /* Adjust position of cursor */
-  animation: blinkCursor 1s infinite step-end; /* Blinking cursor animation */
-  color: #000; /* Change cursor color to black */
+  right: -8px;
+  animation: blinkCursor 1s infinite step-end;
+  color: #000;
 }
 
 @keyframes blinkCursor {
@@ -122,7 +122,6 @@
   opacity: 0;
   animation: 0.5s ease-in-out forwards;
   transition: transform 0.5s ease, opacity 0.5s ease;
-
 }
 
 .menu-item.hidden {
@@ -192,4 +191,83 @@
 
 .menu-item:hover {
   color: rgb(69, 69, 69);
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 30px;
+  height: 25px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  z-index: 10;
+}
+
+.menu-toggle span {
+  width: 30px;
+  height: 3px;
+  background: #000;
+  border-radius: 10px;
+  transition: all 0.3s linear;
+  position: relative;
+  transform-origin: 1px;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: flex;
+    margin-right: 20px;
+  }
+
+  .menu {
+    position: absolute;
+    top: 8vh;
+    right: 0;
+    height: 92vh;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.9);
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding-top: 2rem;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+  }
+
+  .menu.open {
+    transform: translateX(0);
+  }
+
+  .menu-list {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .menu-item {
+    margin: 1rem 0;
+  }
+
+  .logo {
+    width: auto;
+    padding-left: 20px;
+  }
+
+  .logo-text {
+    font-size: 1.2rem;
+    padding-left: 0;
+    padding-top: 0;
+  }
+
+  .menu-item {
+    animation: none;
+    opacity: 1;
+  }
+
+  .menu-item.hidden {
+    transform: none;
+    opacity: 1;
+  }
 }

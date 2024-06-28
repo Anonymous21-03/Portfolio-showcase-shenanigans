@@ -1,5 +1,3 @@
-//ScrollAnimations.js
-
 export const handleScroll = () => {
   const position = window.pageYOffset;
 
@@ -8,7 +6,7 @@ export const handleScroll = () => {
   const menuItems = document.querySelectorAll('.menu-item');
 
   if (navbar) {
-    if (position > 50) {
+    if (position > 50 && window.innerWidth > 768) {
       navbar.classList.add('hidden');
       menuItems.forEach((item, index) => {
         if (item) {
