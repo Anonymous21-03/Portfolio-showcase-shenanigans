@@ -5,7 +5,7 @@ const Timeline = () => {
   const educationData = [
     {
       year: '2021',
-      institution: 'Somerville School',
+      institution: 'Somerville School Vasundhara Enclave',
       description: 'Completed Senior Secondary with PCM as subjects.',
     },
     {
