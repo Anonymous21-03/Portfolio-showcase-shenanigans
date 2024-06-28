@@ -13,9 +13,9 @@ const Certificates = () => {
     { title: 'Ethical Hacking and Penetration Testing', issuer: 'TechGyan', year: 2022, image: ethicalImage },
   ]
 
-  const certGridRef = useRef(null);
-
   useEffect(() => {
+    const items = document.querySelectorAll('.cert-card');
+  
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,22 +26,33 @@ const Certificates = () => {
       },
       { threshold: 0.1 }
     );
-
-    if (certGridRef.current) {
-      observer.observe(certGridRef.current);
-    }
-
+  
+    const observeItems = () => {
+      items.forEach((item) => {
+        observer.observe(item);
+      });
+    };
+  
+    observeItems();
+  
+    const handleResize = () => {
+      observeItems();
+    };
+  
+    window.addEventListener('resize', handleResize);
+  
     return () => {
-      if (certGridRef.current) {
-        observer.unobserve(certGridRef.current);
-      }
+      items.forEach((item) => {
+        observer.unobserve(item);
+      });
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
   return (
     <div className='cert-container'>
       <h2>My Certificates</h2>
-      <div className='cert-grid' ref={certGridRef}>
+      <div className='cert-grid'>
         {certificates.map((cert, index) => (
           <div key={index} className={`cert-card ${index % 2 === 0 ? 'left' : 'right'}`}>
             <div className="cert-card-inner">
