@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/Portfolio-showcase-shenanigans/static/css/main.2f6ce4b8.css",
+    "main.css": "/Portfolio-showcase-shenanigans/static/css/main.cf394836.css",
     "main.js": "/Portfolio-showcase-shenanigans/static/js/main.4e4aef14.js",
     "static/media/random(1).jpg": "/Portfolio-showcase-shenanigans/static/media/random(1).3e682c7bcb6a4873213b.jpg",
     "static/media/Ethical.png": "/Portfolio-showcase-shenanigans/static/media/Ethical.5d0fa31b409a7c6fefb7.png",
@@ -8,11 +8,11 @@
     "static/media/PwC-PowerBI.png": "/Portfolio-showcase-shenanigans/static/media/PwC-PowerBI.e2c7129c7c7774196a40.png",
     "static/media/Tata-DA&V.png": "/Portfolio-showcase-shenanigans/static/media/Tata-DA&V.6ffcc2bb4ea0b2b20469.png",
     "index.html": "/Portfolio-showcase-shenanigans/index.html",
-    "main.2f6ce4b8.css.map": "/Portfolio-showcase-shenanigans/static/css/main.2f6ce4b8.css.map",
+    "main.cf394836.css.map": "/Portfolio-showcase-shenanigans/static/css/main.cf394836.css.map",
     "main.4e4aef14.js.map": "/Portfolio-showcase-shenanigans/static/js/main.4e4aef14.js.map"
   },
   "entrypoints": [
-    "static/css/main.2f6ce4b8.css",
+    "static/css/main.cf394836.css",
     "static/js/main.4e4aef14.js"
   ]
 }
