@@ -37,6 +37,7 @@ h2 {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-bottom: 2rem;
 }
 
 .cert-card.right {
@@ -87,8 +88,8 @@ h2 {
 }
 
 .cert-card-back img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 90%;
+    max-height: 90%;
     object-fit: contain;
     border-radius: 5px;
 }
@@ -110,15 +111,21 @@ h2 {
     .cert-card {
         width: calc(50% - 2rem);
         min-width: 220px;
-        height: auto;
+        height: 300px;
     }
 }
 
 @media screen and (max-width: 768px) {
+    .cert-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+
     .cert-card {
-        width: calc(50% - 2rem);
-        min-width: 220px;
-        height: auto;
+        width: 100%;
+        max-width: 300px;
+        height: 350px;
+        margin-bottom: 2rem;
     }
 }
 
@@ -127,20 +134,14 @@ h2 {
         font-size: 2rem;
     }
 
-    .cert-grid {
-        flex-direction: column;
-        align-items: center;
-    }
-
     .cert-card {
-        width: 90%;
-        max-width: none;
-        height: auto;
-        margin-bottom: 2rem;
+        width: 100%;
+        max-width: 280px;
+        height: 300px;
     }
 
     .cert-card-front, .cert-card-back {
-        padding: 1rem;
+        padding: 0.8rem;
     }
 
     .cert-card h3 {
