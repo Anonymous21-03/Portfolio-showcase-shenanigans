@@ -22,7 +22,7 @@ const Timeline = () => {
 
   useEffect(() => {
     const items = document.querySelectorAll('.timeline-item');
-
+  
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -35,15 +35,26 @@ const Timeline = () => {
       },
       { threshold: 0.1 }
     );
-
-    items.forEach((item) => {
-      observer.observe(item);
-    });
-
+  
+    const observeItems = () => {
+      items.forEach((item) => {
+        observer.observe(item);
+      });
+    };
+  
+    observeItems();
+  
+    const handleResize = () => {
+      observeItems();
+    };
+  
+    window.addEventListener('resize', handleResize);
+  
     return () => {
       items.forEach((item) => {
         observer.unobserve(item);
       });
+      window.removeEventListener('resize', handleResize);
     };
   }, []);
 
