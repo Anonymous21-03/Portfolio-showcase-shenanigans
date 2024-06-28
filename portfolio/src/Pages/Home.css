@@ -183,7 +183,7 @@
 
 .card-instruction {
     position: absolute;
-    bottom: -40%;
+    bottom: -45%;
     left: 50%;
     transform: translateX(-50%);
     font-size: 14px;
