@@ -4,19 +4,19 @@ import './Timeline.css';
 const Timeline = () => {
   const educationData = [
     {
-      year: '2020',
-      institution: 'High School',
-      description: 'Completed high school with honors in science and mathematics.',
+      year: '2021',
+      institution: 'Somerville School',
+      description: 'Completed Senior Secondary with PCM as subjects.',
     },
     {
-      year: '2022',
-      institution: 'Community College',
-      description: "Earned an Associate's degree in Computer Science.",
+      year: '2021-2025',
+      institution: 'Jaypee Institute of Information Technology',
+      description: "Pursuing my B.Tech degree in Computer Science Engineering.",
     },
     {
-      year: '2024',
-      institution: 'University',
-      description: "Currently pursuing a Bachelor's degree in Data Science.",
+      year: '2025-bright future',
+      institution: 'TBD',
+      description: "Still Exploring my options to fill this space.:)",
     },
   ];
 
