@@ -1,18 +1,26 @@
 {
   "files": {
-    "main.css": "/Portfolio-showcase-shenanigans/static/css/main.763f022d.css",
-    "main.js": "/Portfolio-showcase-shenanigans/static/js/main.aed04d53.js",
+    "main.css": "/Portfolio-showcase-shenanigans/static/css/main.c242a5d7.css",
+    "main.js": "/Portfolio-showcase-shenanigans/static/js/main.70a0f765.js",
     "static/media/random(1).jpg": "/Portfolio-showcase-shenanigans/static/media/random(1).3e682c7bcb6a4873213b.jpg",
+    "static/media/fa-solid-900.ttf": "/Portfolio-showcase-shenanigans/static/media/fa-solid-900.bacd5de623fb563b961a.ttf",
     "static/media/Ethical.png": "/Portfolio-showcase-shenanigans/static/media/Ethical.5d0fa31b409a7c6fefb7.png",
+    "static/media/fa-brands-400.ttf": "/Portfolio-showcase-shenanigans/static/media/fa-brands-400.60127e352b7a11f7f1bc.ttf",
+    "static/media/fa-solid-900.woff2": "/Portfolio-showcase-shenanigans/static/media/fa-solid-900.4d986b00ff9ca3828fbd.woff2",
+    "static/media/fa-brands-400.woff2": "/Portfolio-showcase-shenanigans/static/media/fa-brands-400.455ea818179b4def0c43.woff2",
     "static/media/Accenture-DA&V.png": "/Portfolio-showcase-shenanigans/static/media/Accenture-DA&V.dab81d707ec0403bf906.png",
     "static/media/PwC-PowerBI.png": "/Portfolio-showcase-shenanigans/static/media/PwC-PowerBI.e2c7129c7c7774196a40.png",
     "static/media/Tata-DA&V.png": "/Portfolio-showcase-shenanigans/static/media/Tata-DA&V.6ffcc2bb4ea0b2b20469.png",
+    "static/media/fa-regular-400.ttf": "/Portfolio-showcase-shenanigans/static/media/fa-regular-400.eb91f7b948a42799f678.ttf",
+    "static/media/fa-regular-400.woff2": "/Portfolio-showcase-shenanigans/static/media/fa-regular-400.21cb8f55d8e0c5b89751.woff2",
+    "static/media/fa-v4compatibility.ttf": "/Portfolio-showcase-shenanigans/static/media/fa-v4compatibility.c8e090db312b0bea2aa2.ttf",
+    "static/media/fa-v4compatibility.woff2": "/Portfolio-showcase-shenanigans/static/media/fa-v4compatibility.cf7f5903d06b79ad60f1.woff2",
     "index.html": "/Portfolio-showcase-shenanigans/index.html",
-    "main.763f022d.css.map": "/Portfolio-showcase-shenanigans/static/css/main.763f022d.css.map",
-    "main.aed04d53.js.map": "/Portfolio-showcase-shenanigans/static/js/main.aed04d53.js.map"
+    "main.c242a5d7.css.map": "/Portfolio-showcase-shenanigans/static/css/main.c242a5d7.css.map",
+    "main.70a0f765.js.map": "/Portfolio-showcase-shenanigans/static/js/main.70a0f765.js.map"
   },
   "entrypoints": [
-    "static/css/main.763f022d.css",
-    "static/js/main.aed04d53.js"
+    "static/css/main.c242a5d7.css",
+    "static/js/main.70a0f765.js"
   ]
 }
