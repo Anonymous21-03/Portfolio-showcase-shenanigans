@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useCallback, useMemo } from 'react'
 import './Home.css'
 
-const SWIPE_THRESHOLD = 50
+const SWIPE_THRESHOLD = 5
 const CARD_COUNT = 5
 const MAX_RADIUS = 200
 

@@ -52,6 +52,7 @@ const Certificates = () => {
   return (
     <div className='cert-container'>
       <h2>My Certificates</h2>
+      <p className="cert-instruction">Touch or hover over a card to see the certificate</p>
       <div className='cert-grid'>
         {certificates.map((cert, index) => (
           <div key={index} className={`cert-card ${index % 2 === 0 ? 'left' : 'right'}`}>

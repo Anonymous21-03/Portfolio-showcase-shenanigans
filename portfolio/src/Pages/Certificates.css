@@ -152,3 +152,9 @@ h2 {
         font-size: 0.8rem;
     }
 }
+.cert-instruction {
+    text-align: center;
+    color: #666;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+}
