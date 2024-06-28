@@ -6,26 +6,26 @@ const CARD_COUNT = 5
 const MAX_RADIUS = 200
 
 const cardData = [
-  { text: 'React', color: '#61DAFB', contrastColor: '#E6F7FE' },
-  { text: 'JavaScript', color: '#F7DF1E', contrastColor: '#FFFDE6' },
-  { text: 'CSS', color: '#264DE4', contrastColor: '#E6E9FC' },
-  { text: 'HTML', color: '#E34F26', contrastColor: '#FCE9E6' },
-  { text: 'Node.js', color: '#339933', contrastColor: '#E8F5E8' },
-  { text: 'Express', color: '#000000', contrastColor: '#F2F2F2' },
-  { text: 'MongoDB', color: '#47A248', contrastColor: '#EAF5EA' },
-  { text: 'Redux', color: '#764ABC', contrastColor: '#F0E9FA' },
-  { text: 'Vue', color: '#4FC08D', contrastColor: '#EAF8F3' },
-  { text: 'Angular', color: '#DD0031', contrastColor: '#FBE6EA' },
-  { text: 'Python', color: '#3776AB', contrastColor: '#E8F0F8' },
-  { text: 'Ruby', color: '#CC342D', contrastColor: '#FAE8E7' },
-  { text: 'PHP', color: '#787CB5', contrastColor: '#F0F1F8' },
-  { text: 'Java', color: '#007396', contrastColor: '#E6F0F3' },
-  { text: 'C#', color: '#239120', contrastColor: '#E7F4E6' },
-  { text: 'C++', color: '#00599C', contrastColor: '#E6EEF5' },
-  { text: 'Swift', color: '#FA7343', contrastColor: '#FEF0EA' },
-  { text: 'Kotlin', color: '#0095D5', contrastColor: '#E6F4FA' },
-  { text: 'TypeScript', color: '#3178C6', contrastColor: '#E7F0F9' },
-  { text: 'Go', color: '#00ADD8', contrastColor: '#E6F6FB' }
+  { text: 'React', color: '#61DAFB', contrastColor: '#E6F7FE', intro: 'Building UIs' },
+  { text: 'JavaScript', color: '#F7DF1E', contrastColor: '#FFFDE6', intro: 'Scripting the Web' },
+  { text: 'CSS', color: '#264DE4', contrastColor: '#E6E9FC', intro: 'Styling with Flair' },
+  { text: 'HTML', color: '#E34F26', contrastColor: '#FCE9E6', intro: 'Structuring Content' },
+  { text: 'Node.js', color: '#339933', contrastColor: '#E8F5E8', intro: 'Powering Servers' },
+  { text: 'Express', color: '#000000', contrastColor: '#F2F2F2', intro: 'Routing Made Easy' },
+  { text: 'MongoDB', color: '#47A248', contrastColor: '#EAF5EA', intro: 'Storing Data' },
+  { text: 'Redux', color: '#764ABC', contrastColor: '#F0E9FA', intro: 'Managing State' },
+  { text: 'Vue', color: '#4FC08D', contrastColor: '#EAF8F3', intro: 'Progressive Apps' },
+  { text: 'Angular', color: '#DD0031', contrastColor: '#FBE6EA', intro: 'Scaling Apps' },
+  { text: 'Python', color: '#3776AB', contrastColor: '#E8F0F8', intro: 'Coding Versatility' },
+  { text: 'Ruby', color: '#CC342D', contrastColor: '#FAE8E7', intro: 'Programmer\'s Best Friend' },
+  { text: 'PHP', color: '#787CB5', contrastColor: '#F0F1F8', intro: 'Dynamic Web Pages' },
+  { text: 'Java', color: '#007396', contrastColor: '#E6F0F3', intro: 'Enterprise Solutions' },
+  { text: 'C#', color: '#239120', contrastColor: '#E7F4E6', intro: '.NET Development' },
+  { text: 'C++', color: '#00599C', contrastColor: '#E6EEF5', intro: 'High Performance' },
+  { text: 'Swift', color: '#FA7343', contrastColor: '#FEF0EA', intro: 'iOS Development' },
+  { text: 'Kotlin', color: '#0095D5', contrastColor: '#E6F4FA', intro: 'Modern Android' },
+  { text: 'TypeScript', color: '#3178C6', contrastColor: '#E7F0F9', intro: 'Typed JavaScript' },
+  { text: 'Go', color: '#00ADD8', contrastColor: '#E6F6FB', intro: 'Efficient Concurrency' }
 ];
 
 const generateRandomPosition = () => ({
@@ -60,6 +60,7 @@ const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState(
     cardData[0].contrastColor
   )
+  const [introText, setIntroText] = useState(cardData[0].intro)
   const [autoThrowActive, setAutoThrowActive] = useState(true)
 
   const resetCardPosition = useCallback(() => {
@@ -95,6 +96,7 @@ const Home = () => {
       setCardIndex(prevIndex => {
         const newIndex = (prevIndex + 1) % cardData.length
         setBackgroundColor(cardData[newIndex].contrastColor)
+        setIntroText(cardData[newIndex].intro)
         return newIndex
       })
       setCardPositions(prevPositions => {
@@ -257,9 +259,7 @@ const Home = () => {
     <div className='home-container' style={{ backgroundColor }}>
       <div className='content-wrapper'>
         <div className='intro'>
-          <span>Unleashing</span>
-          <span>the</span>
-          <span>Creativity</span>
+          <span>{introText}</span>
         </div>
         <div className='cards-container'>
           {cardElements}
