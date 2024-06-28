@@ -38,7 +38,7 @@ const generateRandomPosition = () => ({
 const generateInitialPosition = () => {
   const directions = ['left', 'right', 'top', 'bottom'];
   const direction = directions[Math.floor(Math.random() * directions.length)];
-  const offset = 1000 + Math.random() * 500; // Random offset between 1000 and 1500
+  const offset = 1000 + Math.random() * 1000; // Random offset between 1000 and 1500
   switch (direction) {
     case 'left': return { x: -offset, y: 0 };
     case 'right': return { x: offset, y: 0 };
