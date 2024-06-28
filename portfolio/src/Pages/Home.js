@@ -60,20 +60,35 @@ const Home = () => {
   const [backgroundColor, setBackgroundColor] = useState(
     cardData[0].contrastColor
   )
+  const [autoThrowActive, setAutoThrowActive] = useState(true)
 
   const resetCardPosition = useCallback(() => {
     setCurrentPosition({ x: 0, y: 0 })
   }, [])
 
-  const throwCard = useCallback(() => {
+  const throwCard = useCallback((fromAutoThrow = false) => {
+    if (isLeaving || isReloading) return;
+
     setIsLeaving(true)
-    const throwDistance = currentPosition.x * 10
-    const throwHeight = currentPosition.y * 3
-    const finalPosition = {
-      x: currentPosition.x + throwDistance,
-      y: currentPosition.y + throwHeight
+    let throwDistance, throwHeight;
+    
+    if (fromAutoThrow) {
+      throwDistance = (Math.random() - 0.5) * 300;
+      throwHeight = (Math.random() - 0.5) * 100;
+      setCurrentPosition({ x: throwDistance, y: throwHeight });
+    } else {
+      throwDistance = currentPosition.x * 10;
+      throwHeight = currentPosition.y * 3;
     }
-    setCurrentPosition(finalPosition)
+
+    const finalPosition = {
+      x: throwDistance,
+      y: throwHeight
+    }
+
+    setTimeout(() => {
+      setCurrentPosition(finalPosition)
+    }, 50)
 
     setTimeout(() => {
       setIsReloading(true)
@@ -100,7 +115,7 @@ const Home = () => {
         return newPositions
       })
     }, 300)
-  }, [currentPosition, resetCardPosition])
+  }, [currentPosition, resetCardPosition, isLeaving, isReloading, setBackgroundColor])
 
   const handleStart = useCallback((clientX, clientY) => {
     setIsDragging(true)
@@ -141,6 +156,20 @@ const Home = () => {
       }
     }
   }, [isDragging, currentPosition, throwCard, resetCardPosition])
+
+  const autoThrow = useCallback(() => {
+    if (!isDragging && !isLeaving && !isReloading) {
+      throwCard(true);
+    }
+  }, [isDragging, isLeaving, isReloading, throwCard])
+
+  useEffect(() => {
+    let interval;
+    if (autoThrowActive) {
+      interval = setInterval(autoThrow, 3000);
+    }
+    return () => clearInterval(interval);
+  }, [autoThrowActive, autoThrow]);
 
   useEffect(() => {
     const handleGlobalMouseMove = e =>
@@ -190,30 +219,22 @@ const Home = () => {
               }
               style={{
                 transform: `
-            translate(${
-              index === 0 ? currentPosition.x : cardPositions[index].x
-            }px, 
-                      ${
-                        index === 0 ? currentPosition.y : cardPositions[index].y
-                      }px)
-            rotate(${
-              index === 0
-                ? currentPosition.x * 0.1
-                : cardPositions[index].rotation
-            }deg)
-            scale(${(1 - index * 0.05) * (cardPositions[index].scale || 1)})
-            perspective(1000px)
-            rotateX(${cardPositions[index].y * 0.1}deg)
-            rotateY(${cardPositions[index].x * -0.1}deg)
-          `,
+                  translate(${index === 0 ? currentPosition.x : cardPositions[index].x}px, 
+                            ${index === 0 ? currentPosition.y : cardPositions[index].y}px)
+                  rotate(${index === 0 ? currentPosition.x * 0.1 : cardPositions[index].rotation}deg)
+                  scale(${(1 - index * 0.05) * (cardPositions[index].scale || 1)})
+                  perspective(1000px)
+                  rotateX(${cardPositions[index].y * 0.1}deg)
+                  rotateY(${cardPositions[index].x * -0.1}deg)
+                `,
                 transition: isDragging
                   ? 'none'
                   : 'all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
-                opacity: 1 - index * 0.1,
+                opacity: isLeaving && index === 0 ? 0 : 1 - index * 0.1,
                 zIndex: CARD_COUNT - index,
                 top: `${index * 5}px`,
                 animationName: cardAnimations[index],
-                backgroundColor: color // Set card background color
+                backgroundColor: color
               }}
             >
               <div className='card2'>{text}</div>

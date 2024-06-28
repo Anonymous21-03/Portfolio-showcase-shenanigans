@@ -3,35 +3,28 @@
     width: 100vw;
     position: relative;
     overflow: hidden;
-    background-color: #4169E1; /* Royal green background */
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
-}
-
-.background-image {
-    position: absolute;
-    top: 0;
-    right: -50%; /* Start further off-screen */
-    width: 50%;
-    height: 100%;
-    background-image: url('./my_images/onstage_2.png');
+    background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                url('https://c1.staticflickr.com/9/8771/17298186692_8390fc1c00_k.jpg'); /* Gradient background with dark theme overlay */
     background-size: cover;
     background-position: center;
-    transition: right 1s ease-out;
-    box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.5); /* Add shadow to the image */
-}
-
-.background-image.slide-in {
-    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* Adjust to push the content to the left */
 }
 
 .content {
     position: relative;
     z-index: 1;
     padding: 2rem;
-    color: white; /* Make text visible on green background */
+    color: white; /* Make text visible on dark background */
     width: 50%; /* Take up left half of container */
+    opacity: 0; /* Start with the content hidden */
+    transition: opacity 1s ease-out; /* Fade in the content */
+    text-align: left; /* Align text to the left */
+}
+
+.content.visible {
+    opacity: 1; /* Make content visible */
 }
 
 /* Add some basic styling to make content visible */

@@ -3,14 +3,14 @@ import './Music.css';
 
 const Music = () => {
   const containerRef = useRef(null);
-  const imageRef = useRef(null);
+  const contentRef = useRef(null);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry.isIntersecting) {
           console.log("Container is intersecting");
-          imageRef.current.classList.add('slide-in');
+          contentRef.current.classList.add('visible');
         }
       },
       { threshold: 0.1 }
@@ -20,11 +20,11 @@ const Music = () => {
       observer.observe(containerRef.current);
     }
 
-    // Fallback: If the image doesn't slide in after 2 seconds, force it to slide in
+    // Fallback: If the content doesn't become visible after 2 seconds, force it to be visible
     const timer = setTimeout(() => {
-      if (imageRef.current && !imageRef.current.classList.contains('slide-in')) {
-        console.log("Forcing slide-in");
-        imageRef.current.classList.add('slide-in');
+      if (contentRef.current && !contentRef.current.classList.contains('visible')) {
+        console.log("Forcing content visibility");
+        contentRef.current.classList.add('visible');
       }
     }, 2000);
 
@@ -38,8 +38,7 @@ const Music = () => {
 
   return (
     <div className='music-container' ref={containerRef}>
-      <div className='background-image' ref={imageRef}></div>
-      <div className='content'>
+      <div className='content' ref={contentRef}>
         <h2>Music Section</h2>
         {/* Add your text content here */}
       </div>
