@@ -35,22 +35,23 @@ const generateRandomPosition = () => ({
   scale: Math.random() * 0.1 + 0.95
 })
 
-const animations = [
-  'slideInCardLeft',
-  'slideInCardRight',
-  'slideInCardTop',
-  'slideInCardBottom'
-]
-const generateRandomAnimation = () =>
-  animations[Math.floor(Math.random() * animations.length)]
+const generateInitialPosition = () => {
+  const directions = ['left', 'right', 'top', 'bottom'];
+  const direction = directions[Math.floor(Math.random() * directions.length)];
+  const offset = 1000 + Math.random() * 500; // Random offset between 1000 and 1500
+  switch (direction) {
+    case 'left': return { x: -offset, y: 0 };
+    case 'right': return { x: offset, y: 0 };
+    case 'top': return { x: 0, y: -offset };
+    case 'bottom': return { x: 0, y: offset };
+    default: return { x: 0, y: 0 };
+  }
+};
 
 const Home = () => {
   const [cardIndex, setCardIndex] = useState(0)
   const [cardPositions, setCardPositions] = useState(() =>
     Array(CARD_COUNT).fill().map(generateRandomPosition)
-  )
-  const [cardAnimations, setCardAnimations] = useState(() =>
-    Array(CARD_COUNT).fill().map(generateRandomAnimation)
   )
   const [isDragging, setIsDragging] = useState(false)
   const [startPosition, setStartPosition] = useState({ x: 0, y: 0 })
@@ -62,6 +63,10 @@ const Home = () => {
   )
   const [introText, setIntroText] = useState(cardData[0].intro)
   const [autoThrowActive, setAutoThrowActive] = useState(true)
+  const [initialLoadComplete, setInitialLoadComplete] = useState(false)
+  const [initialPositions] = useState(() =>
+    Array(CARD_COUNT).fill().map(generateInitialPosition)
+  )
 
   const resetCardPosition = useCallback(() => {
     setCurrentPosition({ x: 0, y: 0 })
@@ -104,16 +109,9 @@ const Home = () => {
           ...prevPositions.slice(1),
           generateRandomPosition()
         ]
-        setCardAnimations(prevAnimations => {
-          const newAnimations = [
-            ...prevAnimations.slice(1),
-            generateRandomAnimation()
-          ]
-          setIsLeaving(false)
-          resetCardPosition()
-          setTimeout(() => setIsReloading(false), 50)
-          return newAnimations
-        })
+        setIsLeaving(false)
+        resetCardPosition()
+        setTimeout(() => setIsReloading(false), 50)
         return newPositions
       })
     }, 300)
@@ -198,19 +196,31 @@ const Home = () => {
     }
   }, [isDragging, handleMove, handleEnd])
 
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setInitialLoadComplete(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const cardElements = useMemo(
     () =>
       Array(CARD_COUNT)
         .fill()
         .map((_, index) => {
-          const cardDataIndex = (cardIndex + index) % cardData.length
-          const { text, color } = cardData[cardDataIndex]
+          const cardDataIndex = (cardIndex + index) % cardData.length;
+          const { text, color } = cardData[cardDataIndex];
+          const initialPosition = initialPositions[index];
+          
           return (
             <div
               key={cardDataIndex}
               className={`card ${index === 0 ? 'top-card' : ''} ${
                 index === 0 && isLeaving ? 'leaving' : ''
-              } ${isReloading ? 'reloading' : ''}`}
+              } ${isReloading ? 'reloading' : ''} ${
+                initialLoadComplete ? 'initial-load' : ''
+              }`}
               onMouseDown={
                 index === 0 ? e => handleStart(e.clientX, e.clientY) : undefined
               }
@@ -221,39 +231,37 @@ const Home = () => {
               }
               style={{
                 transform: `
-                  translate(${index === 0 ? currentPosition.x : cardPositions[index].x}px, 
-                            ${index === 0 ? currentPosition.y : cardPositions[index].y}px)
-                  rotate(${index === 0 ? currentPosition.x * 0.1 : cardPositions[index].rotation}deg)
-                  scale(${(1 - index * 0.05) * (cardPositions[index].scale || 1)})
-                  perspective(1000px)
-                  rotateX(${cardPositions[index].y * 0.1}deg)
-                  rotateY(${cardPositions[index].x * -0.1}deg)
+                  translate(${initialLoadComplete ? (index === 0 ? currentPosition.x : cardPositions[index].x) : initialPosition.x}px, 
+                            ${initialLoadComplete ? (index === 0 ? currentPosition.y : cardPositions[index].y) : initialPosition.y}px)
+                  rotate(${initialLoadComplete ? (index === 0 ? currentPosition.x * 0.1 : cardPositions[index].rotation) : 0}deg)
+                  scale(${initialLoadComplete ? (1 - index * 0.05) * (cardPositions[index].scale || 1) : 1})
                 `,
                 transition: isDragging
                   ? 'none'
-                  : 'all 0.3s cubic-bezier(0.25, 0.1, 0.25, 1)',
-                opacity: isLeaving && index === 0 ? 0 : 1 - index * 0.1,
+                  : `all ${0.5 + index * 0.1}s cubic-bezier(0.25, 0.1, 0.25, 1)`,
+                opacity: isLeaving && index === 0 ? 0 : 1,
                 zIndex: CARD_COUNT - index,
-                top: `${index * 5}px`,
-                animationName: cardAnimations[index],
-                backgroundColor: color
+                top: initialLoadComplete ? `${index * 5}px` : '0px',
+                backgroundColor: color,
+                transitionDelay: !initialLoadComplete ? `${index * 0.1}s` : '0s',
               }}
             >
               <div className='card2'>{text}</div>
             </div>
-          )
+          );
         }),
     [
       cardIndex,
       cardPositions,
-      cardAnimations,
       currentPosition,
       isDragging,
       isLeaving,
       isReloading,
-      handleStart
+      handleStart,
+      initialLoadComplete,
+      initialPositions,
     ]
-  )
+  );
 
   return (
     <div className='home-container' style={{ backgroundColor }}>
