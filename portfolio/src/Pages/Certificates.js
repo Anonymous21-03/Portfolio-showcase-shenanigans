@@ -1,9 +1,9 @@
-import React, { useEffect, useRef } from 'react'
-import './Certificates.css'
-import pwcImage from './certs/PwC-PowerBI.png'
-import accentureImage from './certs/Accenture-DA&V.png'
-import tataImage from './certs/Tata-DA&V.png'
-import ethicalImage from './certs/Ethical.png'
+import React, { useEffect } from 'react';
+import './Certificates.css';
+import pwcImage from './certs/PwC-PowerBI.png';
+import accentureImage from './certs/Accenture-DA&V.png';
+import tataImage from './certs/Tata-DA&V.png';
+import ethicalImage from './certs/Ethical.png';
 
 const Certificates = () => {
   const certificates = [
@@ -11,11 +11,11 @@ const Certificates = () => {
     { title: 'Data Analytics and Visualization - Accenture', issuer: 'Forage', year: 2024, image: accentureImage },
     { title: 'Data Visualization - Tata', issuer: 'Forage', year: 2024, image: tataImage },
     { title: 'Ethical Hacking and Penetration Testing', issuer: 'TechGyan', year: 2022, image: ethicalImage },
-  ]
+  ];
 
   useEffect(() => {
     const items = document.querySelectorAll('.cert-card');
-  
+
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
@@ -26,21 +26,21 @@ const Certificates = () => {
       },
       { threshold: 0.1 }
     );
-  
+
     const observeItems = () => {
       items.forEach((item) => {
         observer.observe(item);
       });
     };
-  
+
     observeItems();
-  
+
     const handleResize = () => {
       observeItems();
     };
-  
+
     window.addEventListener('resize', handleResize);
-  
+
     return () => {
       items.forEach((item) => {
         observer.unobserve(item);
@@ -69,7 +69,7 @@ const Certificates = () => {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default Certificates
+export default Certificates;
