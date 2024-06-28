@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "/Portfolio-showcase-shenanigans/static/css/main.90dc7e93.css",
-    "main.js": "/Portfolio-showcase-shenanigans/static/js/main.45b2da91.js",
-    "static/media/random(1).jpg": "/Portfolio-showcase-shenanigans/static/media/random(1).3e682c7bcb6a4873213b.jpg",
-    "static/media/Ethical.png": "/Portfolio-showcase-shenanigans/static/media/Ethical.5d0fa31b409a7c6fefb7.png",
-    "static/media/Accenture-DA&V.png": "/Portfolio-showcase-shenanigans/static/media/Accenture-DA&V.dab81d707ec0403bf906.png",
-    "static/media/PwC-PowerBI.png": "/Portfolio-showcase-shenanigans/static/media/PwC-PowerBI.e2c7129c7c7774196a40.png",
-    "static/media/Tata-DA&V.png": "/Portfolio-showcase-shenanigans/static/media/Tata-DA&V.6ffcc2bb4ea0b2b20469.png",
-    "index.html": "/Portfolio-showcase-shenanigans/index.html",
-    "main.90dc7e93.css.map": "/Portfolio-showcase-shenanigans/static/css/main.90dc7e93.css.map",
-    "main.45b2da91.js.map": "/Portfolio-showcase-shenanigans/static/js/main.45b2da91.js.map"
+    "main.css": "/static/css/main.90dc7e93.css",
+    "main.js": "/static/js/main.633b4f17.js",
+    "static/media/random(1).jpg": "/static/media/random(1).3e682c7bcb6a4873213b.jpg",
+    "static/media/Ethical.png": "/static/media/Ethical.5d0fa31b409a7c6fefb7.png",
+    "static/media/Accenture-DA&V.png": "/static/media/Accenture-DA&V.dab81d707ec0403bf906.png",
+    "static/media/PwC-PowerBI.png": "/static/media/PwC-PowerBI.e2c7129c7c7774196a40.png",
+    "static/media/Tata-DA&V.png": "/static/media/Tata-DA&V.6ffcc2bb4ea0b2b20469.png",
+    "index.html": "/index.html",
+    "main.90dc7e93.css.map": "/static/css/main.90dc7e93.css.map",
+    "main.633b4f17.js.map": "/static/js/main.633b4f17.js.map"
   },
   "entrypoints": [
     "static/css/main.90dc7e93.css",
-    "static/js/main.45b2da91.js"
+    "static/js/main.633b4f17.js"
   ]
 }
