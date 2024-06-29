@@ -121,11 +121,10 @@
   transition: all 0.3s ease;
   opacity: 0;
   animation: 0.5s ease-in-out forwards;
-  transition: transform 0.5s ease, opacity 0.5s ease;
 }
 
 .menu-item.hidden {
-  transform: translateY(-50px);
+  transform: translateY(-100%);
   opacity: 0;
 }
 
@@ -171,6 +170,16 @@
 .menu-item:nth-child(4) {
   animation-name: slideInFromBottom;
   animation-delay: 0.8s;
+}
+
+.menu-item:nth-child(5) {
+  animation-name: slideInFromTop;
+  animation-delay: 1s;
+}
+
+.menu-item:nth-child(6) {
+  animation-name: slideInFromBottom;
+  animation-delay: 1.2s;
 }
 
 .menu-item::after {
@@ -223,7 +232,7 @@
   }
 
   .menu {
-    position: absolute;
+    position: fixed;
     top: 8vh;
     right: 0;
     height: 92vh;
@@ -244,10 +253,17 @@
   .menu-list {
     flex-direction: column;
     align-items: center;
+    width: 100%;
   }
 
   .menu-item {
     margin: 1rem 0;
+    opacity: 1;
+    transform: none;
+    font-size: 1.2rem;
+    width: 100%;
+    text-align: center;
+    animation: none;
   }
 
   .logo {
@@ -259,15 +275,5 @@
     font-size: 1.2rem;
     padding-left: 0;
     padding-top: 0;
-  }
-
-  .menu-item {
-    animation: none;
-    opacity: 1;
-  }
-
-  .menu-item.hidden {
-    transform: none;
-    opacity: 1;
   }
 }
