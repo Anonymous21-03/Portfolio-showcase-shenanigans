@@ -9,23 +9,16 @@ const cardData = [
   { text: 'React', color: '#61DAFB', contrastColor: '#E6F7FE', intro: 'Building UIs' },
   { text: 'JavaScript', color: '#F7DF1E', contrastColor: '#FFFDE6', intro: 'Scripting the Web' },
   { text: 'CSS', color: '#264DE4', contrastColor: '#E6E9FC', intro: 'Styling with Flair' },
-  { text: 'HTML', color: '#E34F26', contrastColor: '#FCE9E6', intro: 'Structuring Content' },
   { text: 'Node.js', color: '#339933', contrastColor: '#E8F5E8', intro: 'Powering Servers' },
-  { text: 'Express', color: '#000000', contrastColor: '#F2F2F2', intro: 'Routing Made Easy' },
-  { text: 'MongoDB', color: '#47A248', contrastColor: '#EAF5EA', intro: 'Storing Data' },
-  { text: 'Redux', color: '#764ABC', contrastColor: '#F0E9FA', intro: 'Managing State' },
-  { text: 'Vue', color: '#4FC08D', contrastColor: '#EAF8F3', intro: 'Progressive Apps' },
-  { text: 'Angular', color: '#DD0031', contrastColor: '#FBE6EA', intro: 'Scaling Apps' },
-  { text: 'Python', color: '#3776AB', contrastColor: '#E8F0F8', intro: 'Coding Versatility' },
-  { text: 'Ruby', color: '#CC342D', contrastColor: '#FAE8E7', intro: 'Programmer\'s Best Friend' },
-  { text: 'PHP', color: '#787CB5', contrastColor: '#F0F1F8', intro: 'Dynamic Web Pages' },
-  { text: 'Java', color: '#007396', contrastColor: '#E6F0F3', intro: 'Enterprise Solutions' },
-  { text: 'C#', color: '#239120', contrastColor: '#E7F4E6', intro: '.NET Development' },
-  { text: 'C++', color: '#00599C', contrastColor: '#E6EEF5', intro: 'High Performance' },
-  { text: 'Swift', color: '#FA7343', contrastColor: '#FEF0EA', intro: 'iOS Development' },
-  { text: 'Kotlin', color: '#0095D5', contrastColor: '#E6F4FA', intro: 'Modern Android' },
-  { text: 'TypeScript', color: '#3178C6', contrastColor: '#E7F0F9', intro: 'Typed JavaScript' },
-  { text: 'Go', color: '#00ADD8', contrastColor: '#E6F6FB', intro: 'Efficient Concurrency' }
+  { text: 'Cyber Security', color: '#2C3E50', contrastColor: '#E7EAED', intro: 'Guarding Digital Realms' },
+  { text: 'Product Builder', color: '#27AE60', contrastColor: '#E7F6EE', intro: 'Crafting Solutions' },
+  { text: 'Music Lover', color: '#1DB954', contrastColor: '#E6F9EC', intro: 'Harmonizing Life' },
+  { text: 'Guitar Player', color: '#D35400', contrastColor: '#FCE9E0', intro: 'Strumming Stories' },
+  { text: 'Singer', color: '#9B59B6', contrastColor: '#F5EDF8', intro: 'Voicing Emotions' },
+  { text: 'Astronomer', color: '#34495E', contrastColor: '#E8ECF0', intro: 'Stargazing Dreamer' },
+  { text: 'Gamer', color: '#E74C3C', contrastColor: '#FCE9E7', intro: 'Digital Adventurer' },
+  { text: 'Space Enthusiast', color: '#8E44AD', contrastColor: '#F3EAF7', intro: 'Exploring Cosmos' },
+  { text: 'Valorant Player', color: '#FF4655', contrastColor: '#FFEAEC', intro: 'Tactical Sharpshooter' }
 ];
 
 const generateRandomPosition = () => ({
