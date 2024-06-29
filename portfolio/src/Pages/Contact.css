@@ -127,19 +127,41 @@ body {
 }
 
 .wrapper .icon span {
-  color: #1a1a1a; /* Change icon color to black */
+  color: #1a1a1a;
 }
 
 @media (max-width: 768px) {
   .contact-title {
-    font-size: 3rem;
+    font-size: 2.5rem;
+    text-align: center;
   }
 
   .wrapper {
-    flex-direction: column;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    height: auto;
+    padding-top: 20px;
   }
 
   .wrapper .icon {
-    margin: 5px 0;
+    margin: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .contact-title {
+    font-size: 2rem;
+  }
+
+  .wrapper {
+    padding-top: 10px;
+  }
+
+  .wrapper .icon {
+    width: 40px;
+    height: 40px;
+    font-size: 16px;
+    margin: 8px;
   }
 }
