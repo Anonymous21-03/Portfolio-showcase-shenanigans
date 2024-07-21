@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Portfolio-showcase-shenanigans/static/css/main.50cfb9f3.css",
-    "main.js": "/Portfolio-showcase-shenanigans/static/js/main.8c8649c4.js",
+    "main.js": "/Portfolio-showcase-shenanigans/static/js/main.b3f700fb.js",
     "static/media/random(1).jpg": "/Portfolio-showcase-shenanigans/static/media/random(1).3e682c7bcb6a4873213b.jpg",
     "static/media/Ethical.png": "/Portfolio-showcase-shenanigans/static/media/Ethical.5d0fa31b409a7c6fefb7.png",
     "static/media/Accenture-DA&V.png": "/Portfolio-showcase-shenanigans/static/media/Accenture-DA&V.dab81d707ec0403bf906.png",
@@ -9,10 +9,10 @@
     "static/media/Tata-DA&V.png": "/Portfolio-showcase-shenanigans/static/media/Tata-DA&V.6ffcc2bb4ea0b2b20469.png",
     "index.html": "/Portfolio-showcase-shenanigans/index.html",
     "main.50cfb9f3.css.map": "/Portfolio-showcase-shenanigans/static/css/main.50cfb9f3.css.map",
-    "main.8c8649c4.js.map": "/Portfolio-showcase-shenanigans/static/js/main.8c8649c4.js.map"
+    "main.b3f700fb.js.map": "/Portfolio-showcase-shenanigans/static/js/main.b3f700fb.js.map"
   },
   "entrypoints": [
     "static/css/main.50cfb9f3.css",
-    "static/js/main.8c8649c4.js"
+    "static/js/main.b3f700fb.js"
   ]
 }
